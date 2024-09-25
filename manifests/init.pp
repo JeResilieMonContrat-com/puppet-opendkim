@@ -118,6 +118,8 @@ class opendkim (
   Boolean                         $service_enable       = true,
 
   Variant[Boolean,Enum['yes','no']]                $log_why              = 'no',
+  Variant[Boolean,Enum['yes','no']]                $syslogsuccess        = 'yes',
+  Variant[Boolean,Enum['yes','no']]                $syslog               = 'yes',
   Variant[Boolean,Enum['yes','no']]                $subdomains           = 'yes',
   String                          $socket               = 'inet:8891@127.0.0.1',
   Pattern[/\A[0-7]{3,4}\z/]       $umask                = '0022',

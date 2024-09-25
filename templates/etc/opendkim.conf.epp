@@ -1,4 +1,6 @@
 <%- | Stdlib::Absolutepath $pidfile,
+      Variant[Boolean,Enum['yes','no']] $syslog,
+      Variant[Boolean,Enum['yes','no']] $syslogsuccess,
       String $mode,
       Variant[Boolean,Enum['yes','no']] $log_why,
       String[1] $user,
@@ -39,10 +41,12 @@ PidFile <%= $pidfile %>
 Mode <%= $mode %>
 
 # Log activity to the system log.
-Syslog  yes
+Syslog <%= $syslog ? { true => 'yes', false => 'no', default => $syslog } %>
+
 
 # Log additional entries indicating successful signing or verification of messages.
-SyslogSuccess yes
+SyslogSuccess <%= $syslogsuccess ? { true => 'yes', false => 'no', default => $syslogsuccess } %>
+
 
 # If logging is enabled, include detailed logging about why or why not a message was
 # signed or verified. This causes a large increase in the amount of log data generated

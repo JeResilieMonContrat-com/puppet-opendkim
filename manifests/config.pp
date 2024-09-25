@@ -104,6 +104,8 @@ class opendkim::config {
         'pidfile'              => $opendkim::pidfile,
         'mode'                 => $opendkim::mode,
         'log_why'              => $opendkim::log_why,
+        'syslogsuccess'        => $opendkim::syslogsuccess,
+        'syslog'               => $opendkim::syslog,
         'user'                 => $opendkim::user,
         'group'                => $opendkim::group,
         'socket'               => $opendkim::socket,
